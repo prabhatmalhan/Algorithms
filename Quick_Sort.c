@@ -1,3 +1,11 @@
+/*
+Quick Sort follow divide and conquer technique for sorting
+Best case : O(nlogn)
+Medium case : O(nlogn)
+Worst Case : O(n^2)
+*/
+
+//to find and place the pivot in correct position
 #include <stdio.h>
 int partition(int arr[],int l,int h)
 {
@@ -26,6 +34,7 @@ int partition(int arr[],int l,int h)
     return j;
 }
 
+//to divide the array at pivot and then sort the parts formed by same procedure
 void QuickSort(int arr[],int l,int h)
 {
     if(l<h)
