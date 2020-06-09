@@ -5,8 +5,9 @@ Medium case : O(nlogn)
 Worst Case : O(n^2)
 */
 
-//to find and place the pivot in correct position
 #include <stdio.h>
+
+//to find and place the pivot in correct position
 int partition(int arr[],int l,int h)
 {
     int pivot = arr[l] , i=l , j=h;
