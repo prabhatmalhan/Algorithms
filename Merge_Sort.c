@@ -1,8 +1,16 @@
+/*
+Merge Sort follow divide and conquer technique for sorting
+Best case : O(nlogn)
+Medium case : O(nlogn)
+Worst Case : O(nlogn)
+*/
+
 #include<stdio.h>
 #include <stdlib.h>
 
 int *a;
 
+//merging the two arrays formed by splitting the original array from "l to m" and then "m+1 to h"
 void Merge(int l,int m,int h)
 {
     
@@ -24,6 +32,8 @@ void Merge(int l,int m,int h)
     
 }
 
+//recursively calling the function for divide and conquer algorithm
+//i.e to split array into smaller arrays
 void MergeSort(int l,int h)
 {
     if(l<h)
