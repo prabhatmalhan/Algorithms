@@ -9,10 +9,10 @@ int jumpSearch(int arr[],int key,int l,int n,int j)
     {
         int x = l+j;
         if(x>n)
-            x=n;
+            x=n-1;
         if(arr[x]>key)
         {
-            for(int i=l;i<x;++i)
+            for(int i=l;i<=x;++i)
                 if(arr[i]==key)
                     return 1;
             return 0;
