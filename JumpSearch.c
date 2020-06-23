@@ -7,9 +7,12 @@ int jumpSearch(int arr[],int key,int l,int n,int j)
         return 0;
     else
     {
-        if(l+j < n && arr[l+j]>key)
+        int x = l+j;
+        if(x>n)
+            x=n-1;
+        if(arr[x]>key)
         {
-            for(int i=l;i<l+j;++i)
+            for(int i=l;i<=x;++i)
                 if(arr[i]==key)
                     return 1;
             return 0;
@@ -23,6 +26,7 @@ int main()
     int n;
     scanf("%d",&n);
     int arr[n];
+    //sorted array required
     for(int i=0 ; i<n ; ++i)
         scanf("%d",&arr[i]);
     int k;
