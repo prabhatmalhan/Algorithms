@@ -39,8 +39,9 @@ void pop(node_type **top)
     }
 }
 
-void display(node_type *top)
+void display(node_type **t)
 {
+    node_type *top = *t;
     if (top == NULL)
         printf("LIST EMPTY");
     else
@@ -73,7 +74,7 @@ int main()
             pop(&(stack.top));
             break;
         case 3:
-            display(stack.top);
+            display(&(stack.top));
             break;
         default:
             run = 0;
