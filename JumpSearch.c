@@ -31,6 +31,7 @@ int main()
         scanf("%d",&arr[i]);
     int k;
     scanf("%d",&k);
+    //searching start
     if(jumpSearch(arr,k,0,n,sqrt(n)))
         printf("Found");
     else
