@@ -127,6 +127,6 @@ int main()
         default:
             printf("INVALID INPUT\n\n");
         } //close of switch
-    }
+    } //close of switch
     return 0;
 } //close of main
