@@ -4,3 +4,4 @@ Algorithms used in problem solving and competitive programming, such as :-
 ## Searches
 ## Linked Lists
 ## Binary Search Tree
+## Stacks and Queues
