@@ -31,7 +31,7 @@ int main()
         scanf("%d",&arr[i]);
     int ind;
     scanf("%d",&ind);
-    if(BinarySearch(arr,ind,n))
+    if(BinarySearch(arr,ind,n)) //searching starts
         printf("Found");
     else
         printf("Not found");
