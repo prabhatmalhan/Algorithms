@@ -20,6 +20,7 @@ int main()
         scanf("%d",&arr[i]);
     int ind;
     scanf("%d",&ind);
+    //searching start
     if(LinearSearch(arr,ind,n))
         printf("Found");
     else
