@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include <stdlib.h>
-typedef struct node
+typedef struct node //node of linked list
 {
     struct node *prev;
     int info;
