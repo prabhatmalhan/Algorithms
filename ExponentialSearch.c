@@ -39,7 +39,7 @@ int main()
     int n;
     scanf("%d",&n);
     int arr[n];
-    //array should be sorted
+    //array should be compulsorily sorted
     for(int i=0 ; i<n ; ++i)
         scanf("%d",&arr[i]);
     int k;
