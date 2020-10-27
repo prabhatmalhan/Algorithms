@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct node
+typedef struct node //Blueprint of single node
 {
     int data;
     struct node *next;
