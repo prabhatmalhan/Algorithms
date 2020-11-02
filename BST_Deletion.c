@@ -43,7 +43,7 @@ node_type *insert(node_type *root)
     }
 }
 
-node_type* delete(node_type *root, int key)
+node_type *delete (node_type *root, int key)
 {
     if (root == NULL)
         printf("Key not found !!\n\n");
@@ -52,15 +52,15 @@ node_type* delete(node_type *root, int key)
         if (root->data != key)
         {
             if (root->data > key)
-               root->left = delete(root->left, key);
+                root->left = delete (root->left, key);
             else
-               root->right = delete(root->right, key);
+                root->right = delete (root->right, key);
         }
         else
         {
             printf("Key found !!\n\n");
             //case 1 : No child
-            if(root->left==NULL && root->right==NULL)
+            if (root->left == NULL && root->right == NULL)
             {
                 node_type *t = root;
                 free(t);
@@ -68,14 +68,14 @@ node_type* delete(node_type *root, int key)
             }
 
             //case 2 : one child
-            else if(root->left==NULL)
+            else if (root->left == NULL)
             {
                 node_type *t = root;
                 root = root->right;
                 free(t);
             }
 
-            else if(root->right==NULL)
+            else if (root->right == NULL)
             {
                 node_type *t = root;
                 root = root->left;
@@ -89,9 +89,8 @@ node_type* delete(node_type *root, int key)
                 while (temp->left)
                     temp = temp->left;
                 root->data = temp->data;
-                root->right = delete(root->right,temp->data);
+                root->right = delete (root->right, temp->data);
             }
-            
         }
     }
     return root;
@@ -109,6 +108,18 @@ void display(node_type *root)
     }
 }
 
+void delete_tree(node_type *root)
+{
+    if (root == NULL)
+        return;
+    else
+    {
+        delete_tree(root->left);
+        delete_tree(root->right);
+        free(root);
+    }
+}
+
 int main()
 {
     node_type *root = NULL;
@@ -118,8 +129,9 @@ int main()
         printf("Type :-\n");
         printf("1) Insert Node\n");
         printf("2) Delete Key\n");
-        printf("3) Display BST\n");
-        printf("4) Exit\n");
+        printf("3) Delete BST\n");
+        printf("4) Display BST\n");
+        printf("5) Exit\n");
         printf("Choice : ");
         scanf("%d", &ch);
 
@@ -134,12 +146,23 @@ int main()
             int key;
             printf("Enter the key : ");
             scanf("%d", &key);
-            root  = delete(root, key);
+            root = delete (root, key);
         }
 
         else if (ch == 3)
         {
-            if(root==NULL)
+            if (root == NULL)
+                printf("Empty BST");
+            else
+            {
+                delete_tree(root);
+                root = NULL;
+            }
+        }
+
+        else if (ch == 4)
+        {
+            if (root == NULL)
                 printf("Empty BST");
             else
             {
@@ -148,7 +171,7 @@ int main()
             }
             printf("\n\n");
         }
-        else if (ch == 4)
+        else if (ch == 5)
             break;
         else
             printf("\n");
