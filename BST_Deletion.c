@@ -46,7 +46,7 @@ node_type *insert(node_type *root)
 node_type *delete (node_type *root, int key)
 {
     if (root == NULL)
-        printf("Key not found !!\n\n");
+        printf("Key not found !!\n");
     else
     {
         if (root->data != key)
@@ -58,7 +58,6 @@ node_type *delete (node_type *root, int key)
         }
         else
         {
-            printf("Key found !!\n\n");
             //case 1 : No child
             if (root->left == NULL && root->right == NULL)
             {
@@ -147,6 +146,7 @@ int main()
             printf("Enter the key : ");
             scanf("%d", &key);
             root = delete (root, key);
+            printf("\n");
         }
 
         else if (ch == 3)
@@ -157,6 +157,7 @@ int main()
             {
                 delete_tree(root);
                 root = NULL;
+                printf("Tree Deleted \n\n");
             }
         }
 
