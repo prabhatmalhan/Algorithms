@@ -79,6 +79,20 @@ void display(node_type *root)
     }
 }
 
+void display2D(node_type *root,int level)
+{
+    if (root == NULL)
+        return;
+    else
+    {
+        display2D(root->right,level+1);
+        for(int i=0 ; i<level ; ++i)
+            printf("\t");
+        printf("%d\n\n", root->data);
+        display2D(root->left,level+1);
+    }
+}
+
 int main()
 {
     node_type *root = NULL;
@@ -89,7 +103,8 @@ int main()
         printf("1) Insert Node\n");
         printf("2) Search Key\n");
         printf("3) Display BST\n");
-        printf("4) Exit\n");
+        printf("4) Display BST in 2D\n");
+        printf("5) Exit\n");
         printf("Choice : ");
         scanf("%d", &ch);
 
@@ -113,7 +128,15 @@ int main()
             display(root);
             printf("\n\n");
         }
+
         else if (ch == 4)
+        {
+            printf("B.S.T. =\n");
+            display2D(root,0);
+            printf("\n\n");
+        }
+
+        else if (ch == 5)
             break;
         else
             printf("\n");
